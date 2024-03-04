@@ -10,14 +10,14 @@ import org.testcontainers.utility.DockerImageName;
 @TestConfiguration(proxyBeanMethods = false)
 public class TestSpringBoot3KafkaDltApplication {
 
-	@Bean
-	@ServiceConnection
-	KafkaContainer kafkaContainer() {
-		return new KafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:latest"));
-	}
+    @Bean
+    @ServiceConnection
+    KafkaContainer kafkaContainer() {
+        return new KafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:latest"));
+    }
 
-	public static void main(String[] args) {
-		SpringApplication.from(SpringBoot3KafkaDltApplication::main).with(TestSpringBoot3KafkaDltApplication.class).run(args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.from(SpringBoot3KafkaDltApplication::main).with(TestSpringBoot3KafkaDltApplication.class).run(args);
+    }
 
 }
